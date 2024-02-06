@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>VIPページ</title>
+</head>
+<body>
+    <header>
+        <img src="img/title.png" alt="VIPlogo" class="title-logo">
+        <nav>
+            <a href="#home">|HOME|</a>
+            <a href="#items">|ITEM|</a>
+            <a href="#staff">|STAFF|</a>
+
+            <button onclick="goBack()">ESC</button>
+        </nav>
+
+    </header>
+
+    <section id="home" class="content-section">
+        <div class="tablet">
+            <img src="img/flame.png" alt="Top Left" class="top-left">
+            <img src="img/flame.png" alt="Top Right" class="top-right">
+            <img src="img/flame.png" alt="Bottom Left" class="bottom-left">
+            <img src="img/flame.png" alt="Bottom Right" class="bottom-right">
+            <div class="tablet-content">
+                <h2>VIP INFO</h2>
+                <div class="coin-mount">
+                    <img src="img/moaicoin.png" alt="Coin Image">
+                    <p id="coin-amount">0 COIN</p>
+                </div>
+                <div class="player-info">
+                    <p id="player-name">プレイヤー名: AAAAAA</p>
+                    <p id="citizen-id">市民ID: ABCDEF</p>
+                    <p id="vip-state">VIP STATE: None</p>
+                </div>
+                <div class="chargemoaicoin" onclick="toggleInput()">
+                    <p id="charge-coin">コインをチャージする</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="gift-bottun">
+            <div class="home-button1" onclick="GetDailyGift()">
+                <img src="img/gift.png" alt="Icon" class="button-icon">
+                <p id="dailygifts">デイリーギフトを受け取る</p>
+            </div>
+            <div class="home-button2" onclick="GetVIPGift()">
+                <img src="img/gift.png" alt="Icon" class="button-icon">
+                <p id="vipgifts">VIP ギフトを受け取る</p>
+            </div>
+            <div class="home-button3" onclick="GoVIPCarShop()">
+                <img src="img/car.png" alt="Icon" class="button-icon">
+                <p id="carshop">VIP CAR SHOP に行く</p>
+            </div>
+        </div>
+
+        <div class="overlay" id="overlay" onclick="toggleInput()"></div>
+        <div class="chargemenu">
+            <div class="input-id" id="input-container" style="display: none;">
+                <div class = "input-dialog">支払い時に受け取ったコードもしくは, <br> Admin より受け取ったコードを入力してください。</div>
+                <input type="text" id="coin-input" placeholder="コードを入力">
+                <div class = "input-button">
+                    <button class="input-back" onclick="toggleInput()">取消</button>
+                    <button class="input-confirm" onclick="confirmCharge()">確定</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- HOME セクションのコンテンツをここに追加 -->
+    </section>
+
+
+    <section id="items">
+        <p class="item-title">PREMIUM ITEM</p>
+        <div class="items-goods">
+                    <!-- アイテムのコンテンツをここに追加 -->
+        </div>
+        <div class="overlay" id="purchasebox-overlay" onclick="togglepurchase()"></div>
+        <div class="chargemenu">
+            <div class="input-id" id="purchasebox" style="display: none;">
+                <div class = "purchase-item-name" id="purchase-item-name">モアイコイン</div>
+                <img src="img/moaicoin.png" alt="Icon" class="purchase-item-img" id="purchase-item-img">
+                <div class = "purchase-item-discription" id="purchase-item-description">モアイコインの説明</div>
+                <div class = "input-button">
+                    <button class="item-back" onclick="togglepurchase()">取消</button>
+                    <button class="item-confirm" id="item-confirm">購入</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section id="staff">
+        <div class="staff-title-container">
+            <p class="staff-title">STAFF MEMBER</p>
+        </div>
+        <div class="staff-control">
+            <div class="staff-member">
+                <img src="img/ryuryu.png" alt="Staff 1">
+                <h2>John Doe</h2>
+                <p>Position: Manager</p>
+            </div>
+            <div class="staff-member">
+                <img src="staff2.jpg" alt="Staff 2">
+                <h2>Jane Smith</h2>
+                <p>Position: Developer</p>
+            </div>
+            <div class="staff-member">
+                <img src="staff3.jpg" alt="Staff 3">
+                <h2>David Johnson</h2>
+                <p>Position: Designer</p>
+            </div>
+            <div class="staff-member">
+                <img src="staff4.jpg" alt="Staff 4">
+                <h2>David Johnson</h2>
+                <p>Position: Designer</p>
+            </div>
+            <div class="staff-member">
+                <img src="staff5.jpg" alt="Staff 5">
+                <h2>David Johnson</h2>
+                <p>Position: Designer</p>
+            </div>
+        </div>
+        
+        <!-- スタッフ紹介のコンテンツをここに追加 -->
+    </section>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

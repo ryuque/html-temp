@@ -1,0 +1,623 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #213458D0;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 40px; /* 周りを丸くする */
+    position: fixed;
+    z-index: 1; /* 他の要素よりも上位のレイヤーに表示 */
+    width: 100%; /* ヘッダーをページ全体の幅に合わせる */
+    right: 0; /* 右端まで伸ばす */
+    transition: opacity 0.5s ease; /* フェードのアニメーション */
+}
+
+.title-logo {
+    margin-left: 30px;
+    width: 250px; /* 画像の幅を調整してください */
+    height: auto; /* アスペクト比を維持するために高さを自動調整 */
+}
+
+h1 {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    align-items: center; /* 垂直方向の中央揃え */
+}
+
+nav a{
+    margin-right: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    position: relative;
+    font-size: 28px; /* デフォルトのフォントサイズ */
+    font-family: 'Monotype Corsiva';
+}
+
+nav button {
+    margin-left: 150px;
+    margin-right: 30px;
+    width: 70px; /* 画像の幅を調整してください */
+    height: 70px; /* アスペクト比を維持するために高さを自動調整 */
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+    background-color: #5180d970;
+    border: none;
+    padding: 5px 10px;
+    position: relative;
+    font-size: 24px; /* デフォルトのフォントサイズ */
+    font-family: 'Monotype Corsiva';
+    border-radius: 20px; /* 周りを丸くする */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* 影を付ける */
+    transition: box-shadow 0.3s ease; /* 影の変化に対して0.3秒かけて変化する */
+}
+
+nav a:after, button:after {
+    content: '';
+    display: block;
+    width: 0; /* 初期状態では下線を非表示 */
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.5s ease; /* widthプロパティの変化に対して0.3秒かけて変化する */
+}
+
+nav a:hover:after {
+    width: 100%; /* ホバー時に下線を表示 */
+}
+
+nav button:hover:after {
+    width: 100%; /* ホバー時に下線を表示 */
+}
+
+nav button:hover {
+    background-color: #5180d9;
+}
+
+
+#home {
+    background-image: url('img/back-home2.png'); /* 画像のパスに実際のファイルパスを指定してください */
+    background-size: cover; /* 画像をセクション全体に広げる */
+    background-position: center; /* 画像を中央に配置 */
+    background-repeat: no-repeat; /* 背景画像を繰り返し表示しない */
+    height: 1020px; /* セクションの高さを調整してください */
+    position: relative;
+    z-index: 0; /* デフォルトのレイヤー位置 */
+    margin: 0;
+    padding: 0;
+}
+
+#items {
+    background-image: url('img/back-items.png'); /* 画像のパスに実際のファイルパスを指定してください */
+    background-size: cover; /* 画像をセクション全体に広げる */
+    background-position: center; /* 画像を中央に配置 */
+    background-repeat: no-repeat; /* 背景画像を繰り返し表示しない */
+    height: 1150px; /* セクションの高さを調整してください */
+    position: relative;
+    z-index: 0; /* デフォルトのレイヤー位置 */
+    margin: 0;
+    padding: 0;
+}
+
+
+#staff {
+    background-image: url('img/back-staff.png'); /* 画像のパスに実際のファイルパスを指定してください */
+    background-size: cover; /* 画像をセクション全体に広げる */
+    background-position: center; /* 画像を中央に配置 */
+    background-repeat: no-repeat; /* 背景画像を繰り返し表示しない */
+    height: 1150px; /* セクションの高さを調整してください */
+    position: relative;
+    z-index: 0; /* デフォルトのレイヤー位置 */
+    margin: 0;
+    margin-top: 0;
+    padding: 0;
+}
+
+.tablet {
+    background-color: #000000D7;
+    border-radius: 20px;
+    padding: 20px;
+    width: 30%;
+    height: 700px;
+    box-shadow: 0 5px 9px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 180px;
+    right: 40px;
+}
+
+.tablet img {
+    position: absolute;
+    width: 100px; /* 適切なサイズに調整してください */
+    height: auto;
+    transform-origin: center center; /* 回転の基準点を左上に設定 */
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg); /* 左上を45度回転 */
+}
+
+.top-right {
+    top: 0;
+    right: 0;
+}
+
+.bottom-left {
+    bottom: 0;
+    left: 0;
+    transform: rotate(180deg); 
+}
+
+.bottom-right {
+    bottom: 0;
+    right: 0;
+    transform: rotate(90deg); 
+}
+
+/* 仮のデータ */
+.tablet-content {
+    font-size: 26px;
+    color: #FFF;
+    margin-left: 40px; /* 任意の値に調整してください */
+    margin-top: 50px; /* 任意の値に調整してください */
+}
+
+.coin-mount {
+    position: relative;
+    display: inline-block; /* インラインブロック要素にすることで左右に並ぶようになります */
+    margin-top: -60px; /* 任意の値に調整してください */
+}
+
+.coin-mount img {
+    position: absolute;
+    left: 0; /* 任意の値に調整してください */
+    top: 50%; /* 上下中央に配置 */
+    transform: translateY(-50%); /* 上下中央に配置 */
+    width: 90px; /* 任意のサイズに調整してください */
+    height: auto;
+}
+
+#coin-amount {
+    font-size: 60px; /* 任意のフォントサイズに調整してください */
+    margin-left: 120px; /* 0とCOINの間の間隔を設定 */
+    font-family: 'Impact';
+    background: linear-gradient(45deg, #ffe700, #ff9500); /* 金色のグラデーション */
+    -webkit-background-clip: text; /* テキストに対して背景クリップを指定 (webkitプレフィックス) */
+    color: transparent; /* テキストの色を透明にする */
+    display: inline-block;
+}
+
+#coin-amount:after {
+    content: '';
+    display: block;
+    width: 0; /* 初期状態では下線を非表示 */
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.5s ease; /* widthプロパティの変化に対して0.3秒かけて変化する */
+}
+
+#coin-amount:hover:after {
+    width: 100%; /* ホバー時に下線を表示 */
+}
+
+.player-info {
+    font-size: 30px; /* デフォルトのフォントサイズ */
+    font-family: 'Helvetica';
+    margin-top: -50px; /* 任意の値に調整してください */
+    #player-name, #citizen-id, #vip-state {
+        margin-bottom: -20px; /* 各要素の下側の余白を追加 */
+    }
+
+}
+
+
+.chargemoaicoin {
+    font-size: 30px; /* デフォルトのフォントサイズ */
+    font-family: 'Helvetica';
+    color: #66A5Ad; /* 青色の文字色 */
+    text-decoration: underline; /* 下線を追加 */
+    margin-top: 100px; /* 任意の値に調整してください */
+    cursor: pointer; /* カーソルをポインターに変更 */
+    transition: font-weight 0.3s ease; /* 文字の太さを変化させるトランジション */
+}
+
+.chargemoaicoin:hover {
+    font-weight: bold; /* カーソルを合わせた時に文字が太くなる */
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 半透明の黒い背景 */
+    z-index: 900; /* モーダルを最前面に配置 */
+
+}
+.chargemenu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* モーダルを最前面に配置 */
+}
+.chargemenu.active {
+    display: block;
+}
+
+.input-id {
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+    display: none;
+    width: 600px;
+    padding: 20px;
+    background-color: #000000F0; /* 黒色の背景 */
+    border: 2px solid #fff; /* 白色の枠線 */
+    border-radius: 20px;
+    text-align: center;
+}
+
+.coin-input {
+    font-size: 20px; /* デフォルトのフォントサイズ */
+    font-family: 'Helvetica';
+    border-radius: 15px;
+}
+
+.input-id input {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.input-dialog {
+    color: #FFF;
+    font-size: 20px; /* デフォルトのフォントサイズ */
+    font-family: 'Helvetica';
+}
+
+.input-button{
+    margin-top: 10px; /* ボタン同士の右側の余白を追加 */
+}
+.input-back {
+    width: 45%;
+    height: 45px;
+    box-sizing: border-box;
+    background-color: #000; /* 黒色の背景 */
+    color: #fff; /* 白色の文字色 */
+    border: 2px solid #fff; /* 白い枠線 */
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px; /* デフォルトのフォントサイズ */
+    font-family: 'Helvetica';
+}
+.input-back:hover {
+    background-color: #FFF; /* ホバー時の背景色を白に変更 */
+    color: #000; /* 白色の文字色 */
+}
+
+.input-confirm {
+    width: 45%;
+    height: 45px;
+    padding: center;
+    margin-left: 10px;
+    box-sizing: border-box;
+    background-color: #0000FF00; /* 青色の背景 */
+    color: #FFF; /* 白色の文字色 */
+    border: 2px solid #0000FF; /* 青い枠線 */
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px; /* デフォルトのフォントサイズ */
+    font-family: 'Helvetica';
+}
+
+.input-confirm:hover {
+    background-color: #0000FF; /* ホバー時の背景色を白に変更 */
+}
+
+
+
+
+.gift-bottun {
+    padding: 10px;
+    position: absolute;
+    top: 200px;
+    left: 20px;
+    width: 500px;
+
+    display: flex;
+    flex-direction: column; /* ボタンを縦に並べる */
+}
+
+.home-button1, .home-button2, .home-button3 {
+    margin: 40px;
+    padding: 10px;
+    width: 550px;
+    height: 50px;
+    background: linear-gradient(45deg, #21347880, #0000FF80); 
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center; /* テキストとアイコンを中央揃え */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* 影を付ける */
+}
+
+.home-button1:hover {
+    background: #0000FFA0; 
+}
+.home-button2:hover {
+    background: #0000FFA0; 
+}
+.home-button3:hover {
+    background: #0000FFA0; 
+}
+.home-button1 #dailygifts::after,
+.home-button2 #vipgifts::after,
+.home-button3 #carshop::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.5s ease;
+}
+
+.home-button1:hover #dailygifts::after,
+.home-button2:hover #vipgifts::after,
+.home-button3:hover #carshop::after {
+    width: 100%;
+}
+
+.button-icon {
+    width: auto; /* 画像の幅を調整してください */
+    height: 50px; /* アスペクト比を維持するために高さを自動調整 */
+    margin-right: 20px; /* アイコンとテキストの間隔を調整 */
+    margin-left: 10px; /* アイコンとテキストの間隔を調整 */
+}
+
+#dailygifts {
+    font-size: 34px; /* 任意のフォントサイズに調整してください */
+    font-family: 'Helvetica';
+}
+
+
+
+#vipgifts {
+    font-size: 34px; /* 任意のフォントサイズに調整してください */
+    font-family: 'Helvetica';
+}
+
+
+
+#carshop {
+    font-size: 34px; /* 任意のフォントサイズに調整してください */
+    font-family: 'Helvetica';
+}
+
+
+
+
+#items {
+    display: flex;
+    flex-direction: column; /* 縦方向に配置 */
+    align-items: center; /* 中央寄せ */
+    text-align: center; /* テキストを中央揃え */
+}
+
+.item-title {
+    margin-top: 20px; /* PREMIUM ITEM とアイテムの間隔を調整 */
+    margin-bottom: 40px; /* PREMIUM ITEM とアイテムの間隔を調整 */
+    font-size: 90px;
+    color: #FFF;
+    font-family: 'Monotype Corsiva';
+    text-shadow: 4px 3px 6px rgba(0, 0, 0, 0.7); /* 影の設定 */
+}
+
+.items-goods {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* アイテムを中央寄せに変更 */
+}
+
+.item {
+    border: 1px solid #4c6cb390;
+    padding: 10px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column; /* アイテムを縦方向に配置 */
+    align-items: center;
+    max-width: 500px; /* アイテムの最大幅を設定 */
+    background-color: #ee780080;
+    border-radius: 20px;
+    box-shadow: 0 6px 11px rgba(0, 0, 0, 0.4);
+}
+
+.item img {
+    max-width: 250px;
+    max-height: auto;
+    vertical-align: middle; /* 追加 */
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+}
+
+.item-name {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: #FFF;
+    font-family: 'Helvetica';
+    text-shadow: 4px 3px 6px rgba(0, 0, 0, 0.7); /* 影の設定 */
+}
+
+.purchase-button {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 170px; /* 画像の幅を調整してください */
+    height: 40px; /* アスペクト比を維持するために高さを自動調整 */
+    cursor: pointer;
+    background-color: #FCF16EE0;
+    border: 2px solid #FCF16EFF; /* 白い枠線 */
+    display: flex; /* 要素をフレックスコンテナにする */
+    align-items: center; /* 垂直方向に中央揃え */
+    justify-content: center; /* 水平方向に中央揃え */
+    border-radius: 15px;
+    box-shadow: 0 5px 9px rgba(0, 0, 0, 0.4);
+}
+
+.purchase-text {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    color: #000;
+    font-size: 26px;
+    font-family: 'Helvetica';
+}
+
+.purchase-button:hover {
+    background-color: #0000; /* ホバー時の背景色を白に変更 */
+    .purchase-text {
+        color: #FCF16EFF; /* ホバー時の背景色を白に変更 */
+    }
+
+}
+
+.purchase-item-name{
+    color: #FFF;
+    font-size: 40px;
+    font-family: 'Helvetica';
+}
+.purchase-item-description{
+    color: #FFF;
+    font-size: 26px;
+    font-family: 'Helvetica';
+}
+
+.item-back {
+    width: 45%;
+    height: 60px;
+    box-sizing: border-box;
+    background-color: #000; /* 黒色の背景 */
+    color: #fff; /* 白色の文字色 */
+    border: 2px solid #fff; /* 白い枠線 */
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 40px; /* デフォルトのフォントサイズ */
+    font-family: 'Helvetica';
+}
+.item-back:hover {
+    background-color: #FFF; /* ホバー時の背景色を白に変更 */
+    color: #000; /* 白色の文字色 */
+}
+
+.item-confirm {
+    width: 45%;
+    height: 60px;
+    padding: center;
+    margin-left: 10px;
+    box-sizing: border-box;
+    background-color: #FCF16EE0;
+    border: 2px solid #FCF16EFF; /* 白い枠線 */
+    color: #000; /* 白色の文字色 */
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 40px; /* デフォルトのフォントサイズ */
+    font-family: 'Helvetica';
+}
+
+.item-confirm:hover {
+    background-color: #0000; /* ホバー時の背景色を白に変更 */
+    color: #FCF16EFF; /* 白色の文字色 */
+}
+
+.purchase-item-img {
+    max-width: 250px;
+    max-height: auto;
+    vertical-align: middle; /* 追加 */
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+}
+
+
+#staff {
+    display: flex;
+    flex-direction: column; /* 縦方向に配置 */
+}
+.staff-title-container {
+    text-align: center;
+}
+.staff-title {
+    margin-top: 20px; /* PREMIUM ITEM とアイテムの間隔を調整 */
+    margin-bottom: 40px; /* PREMIUM ITEM とアイテムの間隔を調整 */
+    font-size: 90px;
+    color: #FFF;
+    font-family: 'Monotype Corsiva';
+    text-shadow: 4px 3px 9px rgba(0, 0, 0, 0.8); /* 影の設定 */
+
+}
+
+.staff-control {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left; /* アイテムを中央寄せに変更 */
+}
+
+.staff-member {
+    display: flex;
+    width: 42%;
+    height: 150px;
+    padding: 20px;
+    border: 1px solid #FFFFFF;
+    border-radius: 20px;
+    margin-top: 30px;
+    margin-left: 30px;
+
+}
+
+.staff-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    align-items: center;
+}
+
+
+
+
+
+

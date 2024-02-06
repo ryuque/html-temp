@@ -1,0 +1,150 @@
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    color: #333;
+    font-family: 'Roboto';
+    background: rgba(0,0,0,0);
+    min-height: 100vh;
+    width: 100%;
+}
+.flex {
+    display: flex;
+}
+.flex-jcc {
+    justify-content: center;
+}
+.container {
+    display: flex;
+    width: 1000px;
+}
+
+/* ---------------------- Top Line ---------------------- */
+/*
+.top-line {
+    color: #fff;
+    background: #212121;
+}
+.top-line__container {
+    align-items: center;
+    justify-content: space-between;
+}
+.top-line__title {
+    font-size: 20px;
+}
+*/
+/* ---------------------- Preview ---------------------- */
+
+
+
+/* ---------------------- Roulette ---------------------- */
+
+.roulette {
+    position: relative;
+    width: 66%;
+    height: 160px;
+    padding: 10px;
+    border-radius: 5px;
+    border-radius: 10px; /* ボックスの角を丸くする */
+    background: #001122;
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: 0.5s all;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.roulette div {
+    border: 3px solid #FFF; /* ボックスの境界線を黒に設定 */
+    padding: 10px; /* ボックスの内側の余白を設定 */
+    text-align: center; /* ボックス内のテキストを中央揃えにする */
+    width: 140px; /* ボックスの幅を設定 */
+    height: 140px; /* ボックスの高さを設定 */
+    box-sizing: border-box; /* ボックスモデルを使用して内側の余白も含めたサイズを設定 */
+    display: flex; /* Flexboxを使用して中央に配置するために追加 */
+    align-items: center; /* 垂直方向に中央に配置するために追加 */
+    justify-content: center; /* 水平方向に中央に配置するために追加 */
+    border-radius: 10px; /* ボックスの角を丸くする */
+    box-shadow: inset 0px 0px 20px rgba(255, 255, 255, 0.5); /* 内側にぼかしを追加 */
+    position: relative; /* 相対位置付け */
+}
+.roulette div .itemname {
+    position: absolute;
+    bottom: 0; /* 下部に配置 */
+    width: 100%; /* 幅を100%にして親要素いっぱいに広げる */
+    color: #FFF; /* テキスト色 */
+    padding: 5px; /* 余白 */
+    font-size: 9px; /* 例: フォントサイズを14pxに指定 */
+}
+
+.roulette div[data-rarity="Common"] {
+    border-color: green; /* Commonの場合は緑色 */
+    box-shadow: inset 0px 0px 20px rgba(0, 128, 0, 0.5); /* 内側にぼかしを追加 */
+}
+
+.roulette div[data-rarity="Rare"] {
+    border-color: blue; /* Rareの場合は青色 */
+    box-shadow: inset 0px 0px 20px rgba(0, 0, 255, 0.5); /* 内側にぼかしを追加 */
+}
+
+.roulette div[data-rarity="Super"] {
+    border-color: purple; /* Superの場合は紫色 */
+    box-shadow: inset 0px 0px 20px rgba(128, 0, 128, 0.5); /* 内側にぼかしを追加 */
+}
+
+.roulette div[data-rarity="Legend"] {
+    border-color: yellow; /* Legendの場合は黄色 */
+    box-shadow: inset 0px 0px 20px rgba(255, 255, 0, 0.5); /* 内側にぼかしを追加 */
+}
+.roulette:before {
+    position: absolute;
+    content: '';
+    width: 4px;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    background: #FF0000;
+    transform: translate(-50%, -50%);
+    opacity: 0.6;
+}
+.roulette:hover {
+    box-shadow: 0px 50px 90px rgba(0, 0, 0, 0.08);
+}
+.roulette__list {
+    display: flex;
+}
+.roulette__prize {
+    flex: 0 0 auto;
+    margin-right: 10px;
+}
+
+
+/* ---------------------- All Components ---------------------- */
+
+/* ---------------------- Media ---------------------- */
+
+@media screen and (max-width: 1100px) {
+    .container {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .preview__dev {
+        flex-direction: column;
+    }
+    .preview__options {
+        padding-right: 0px;
+        margin-bottom: 20px;
+    }
+    .preview__options,
+    .preview__code {
+        width: 100%;
+    }
+    .container {
+        width: 90%;
+    }
+}
